@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 title: Responsible Business
-image: /img/inno7.jpg
+image: /img/home-jumbotron.jpg
 heading: Heading
 subheading: lorem ipsum dolor
 mainpitch:
