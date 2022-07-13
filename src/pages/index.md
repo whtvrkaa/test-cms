@@ -1,9 +1,11 @@
 ---
 templateKey: index-page
-title: Responsible Business
+title: We are Innovate.
 image: /img/home-jumbotron.jpg
 heading: Heading
-subheading: lorem ipsum dolor
+subheading: “We use our passion for innovation, to create new and disruptive
+  retail focussed experiences and products, for Boots customers and colleagues
+  globally.”
 mainpitch:
   title: Why TCS
   description: |+
