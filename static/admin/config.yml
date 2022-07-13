@@ -15,7 +15,7 @@ public_folder: /img
 collections:
   - name: "blog"
     label: "Blog"
-    folder: "src/pages/blog"
+    folder: "src/pages/about"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
@@ -32,12 +32,14 @@ collections:
       - { label: "Featured Image", name: "featuredimage", widget: image }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list" }
+      - { label: 'Color', name: 'color', widget: 'color' }
+
 
   - name: "pages"
     label: "Pages"
     files:
       - file: "src/pages/index.md"
-        label: "Landing Page"
+        label: "Home"
         name: "index"
         fields:
           - {
@@ -46,37 +48,37 @@ collections:
               widget: "hidden",
               default: "index-page",
             }
-          - { label: Title, name: title, widget: string }
-          - { label: Image, name: image, widget: image }
-          - { label: Heading, name: heading, widget: string }
-          - { label: Subheading, name: subheading, widget: string }
+          - { label: Title, name: title, widget: string, required: false }
+          - { label: Image, name: image, widget: image, required: false }
+          - { label: Heading, name: heading, widget: string, required: false }
+          - { label: Subheading, name: subheading, widget: string, required: false }
           - {
               label: Mainpitch,
               name: mainpitch,
               widget: object,
               fields:
                 [
-                  { label: Title, name: title, widget: string },
-                  { label: Description, name: description, widget: text },
+                  { label: Title, name: title, widget: string, required: false },
+                  { label: Description, name: description, widget: text, required: false },
                 ],
             }
-          - { label: Description, name: description, widget: string }
+          - { label: Description, name: description, widget: string, required: false }
           - {
               label: Intro,
               name: intro,
               widget: object,
               fields:
                 [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
+                  { label: Heading, name: heading, widget: string, required: false },
+                  { label: Description, name: description, widget: text, required: false },
                   {
                     label: Blurbs,
                     name: blurbs,
                     widget: list,
                     fields:
                       [
-                        { label: Image, name: image, widget: image },
-                        { label: Text, name: text, widget: text },
+                        { label: Image, name: image, widget: image, required: false },
+                        { label: Text, name: text, widget: text, required: false },
                       ],
                   },
                 ],
@@ -121,9 +123,9 @@ collections:
                   },
                 ],
             }
-      - file: "src/pages/about/index.md"
-        label: "About"
-        name: "about"
+      - file: "src/pages/manifesto/index.md"
+        label: "Manifesto"
+        name: "Manifesto"
         fields:
           - {
               label: "Template Key",
@@ -133,7 +135,17 @@ collections:
             }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
-      - file: "src/pages/products/index.md"
+      - file: "src/pages/about/index.md"
+        label: "About"
+        name: "About"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "about"
+            }        
+      - file: "src/pages/team/index.md"
         label: "Products Page"
         name: "products"
         fields:
@@ -244,3 +256,5 @@ collections:
                   },
                 ],
             }
+            
+            
